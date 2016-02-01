@@ -1,0 +1,109 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="jiewei.popularmovies.DetailActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/detail_backdrop_height"
+        android:id="@+id/backdrop_image_view"
+        android:src="#D1C4E9"
+        />
+
+    <ImageView
+        android:id="@+id/poster_image_view"
+        android:layout_width="@dimen/detail_poster_width"
+        android:layout_height="@dimen/detail_poster_height"
+        android:scaleType="fitXY"
+        style="@style/detail_poster_image"
+       />
+
+    <TextView
+        android:id="@+id/title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/detail_title"
+        android:layout_toRightOf="@+id/poster_image_view"
+        android:layout_below="@+id/backdrop_image_view"
+        />
+
+    <TextView
+        android:id="@+id/release_date_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/detail_release"
+        android:layout_below="@+id/title_text_view"
+        android:layout_toRightOf="@+id/poster_image_view"
+       />
+
+    <LinearLayout
+        android:id="@+id/rating_container"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_toRightOf="@+id/poster_image_view"
+        android:layout_toEndOf="@+id/poster_image_view"
+        android:layout_below="@+id/release_date_text_view"
+        style="@style/detail_rate"
+        android:orientation="horizontal"
+        android:baselineAligned="false"
+        android:weightSum="1"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rating_text_view"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="?android:attr/textColorPrimary"
+            tools:text="10"
+            android:gravity="bottom"
+            android:layout_gravity="center_vertical" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="?android:attr/textColorSecondary"
+            android:text="/10"
+            android:layout_gravity="center_vertical" />
+        <Button
+            android:id="@+id/FavoriteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rating_container"
+            android:layout_toRightOf="@+id/poster_image_view"
+            android:layout_marginLeft="23dp"
+            android:onClick="onClick"
+            android:text="Favorite"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:padding="0dp" />
+    </LinearLayout>
+
+
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/poster_image_view">
+
+
+
+        <android.support.v4.view.PagerTitleStrip
+            android:id="@+id/pager_title_strip"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_gravity="top"
+            android:background="@color/black"
+            android:textColor="@color/white"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:padding="@dimen/margin_inline"
+            />
+
+    </android.support.v4.view.ViewPager>
+
+
+</RelativeLayout>
